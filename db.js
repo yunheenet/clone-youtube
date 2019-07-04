@@ -1,14 +1,12 @@
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+
 dotenv.config();
 
-mongoose.connect(
-    process.env.MONGO_URL,
-    {
-        useNewUrlParser: true,
-        UseFindAndModify: false
-    }
-);
+mongoose.connect(process.env.MONGO_URL, {
+  useNewUrlParser: true
+  // ,UseFindAndModify: false
+});
 
 const db = mongoose.connection;
 
@@ -17,3 +15,6 @@ const handleError = error => console.log(`❌ Error on DB Connection:${error}`);
 
 db.once("open", handleOpen);
 db.on("error", handleError);
+
+// MongoDB Start
+// $ mongod --config /usr/local/etc/mongod.conf
