@@ -1,5 +1,6 @@
 import routes from "../routes";
 import Video from "../models/Video";
+import Comment from "../models/Comment";
 
 // Home
 
@@ -150,6 +151,7 @@ export const postAddComment = async (req, res) => {
     video.comments.push(newComment.id);
     video.save();
   } catch (error) {
+    console.log(error);
     res.status(400);
   } finally {
     res.end();

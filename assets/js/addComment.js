@@ -1,17 +1,17 @@
-import Axios from "axios";
+import axios from "axios";
 
 const addCommentForm = document.getElementById("jsAddComment");
 
 const sendComment = async comment => {
   const videoId = window.location.href.split("/videos/")[1];
-  const reponse = await Axios({
+  const response = await axios({
     url: `/api/${videoId}/comment`,
     method: "POST",
     data: {
       comment
     }
   });
-  console.log(reponse);
+  console.log(response);
 };
 
 const handleSubmit = event => {
