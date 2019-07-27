@@ -28,7 +28,9 @@ passport.use(
     {
       clientID: process.env.FB_ID,
       clientSecret: process.env.FB_SECRET,
-      callbackURL: `http://localhost:4000${routes.facebookCallback}`
+      callbackURL: `http://mighty-refuge-57950.herokuapp.com${routes.facebookCallback}`,
+      profileFields: ["id", "displayName", "photos", "email"],
+      scope: ["public_profile", "email"]
     },
     facebookLoginCallback
   )

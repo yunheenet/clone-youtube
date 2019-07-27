@@ -4,8 +4,8 @@ import aws from "aws-sdk";
 import routes from "./routes";
 
 const s3 = new aws.S3({
-  secretAccessKey: process.env.AWS_PRIVATE_KEY,
   accessKeyId: process.env.AWS_KEY,
+  secretAccessKey: process.env.AWS_PRIVATE_KEY,
   region: "ap-northeast-2"
 });
 

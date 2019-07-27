@@ -15,6 +15,7 @@ import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
 import globalRouter from "./routers/globalRouter";
 import apiRouter from "./routers/apiRouter";
+
 import "./passport";
 
 const app = express();
